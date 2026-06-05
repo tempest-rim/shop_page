@@ -3,38 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tienda de Figuras Anime</title>
+    <title>Mis Emprendimientos</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="inicio-body">
 
     <header>
-        <h1>⛩️ Anime Store ⛩️</h1>
-        <p>Catálogo de Figuras Disponibles</p>
+        <h1>Bienvenido</h1>
+        <p>Selecciona la tienda que deseas visitar</p>
     </header>
 
-    <main class="catalogo">
-        <!-- Tarjeta de Producto 1 -->
-        <div class="producto">
-            <img src="https://via.placeholder.com/250" alt="Figura Anime 1">
-            <h3>Gojo Satoru - JJK (Banpresto)</h3>
-            <p class="precio">S/. 120.00</p>
-            <button class="btn-whatsapp" onclick="enviarWhatsapp('Gojo Satoru - JJK')">
-                Comprar por WhatsApp
-            </button>
+    <main class="contenedor-tiendas">
+        <!-- Tarjeta Tienda de Anime -->
+        <div class="tarjeta-tienda anime-card">
+            <h2>Rimuru Store</h2>
+            <p>Figuras coleccionables e importaciones exclusivas de anime.</p>
+            <a href="anime.html" class="btn-entrar">Entrar a la Tienda</a>
         </div>
 
-        <!-- Tarjeta de Producto 2 -->
-        <div class="producto">
-            <img src="https://via.placeholder.com/250" alt="Figura Anime 2">
-            <h3>Luffy Gear 5 - One Piece (Bandai)</h3>
-            <p class="precio">S/. 150.00</p>
-            <button class="btn-whatsapp" onclick="enviarWhatsapp('Luffy Gear 5 - One Piece')">
-                Comprar por WhatsApp
-            </button>
+        <!-- Tarjeta Tienda de Barbería -->
+        <div class="tarjeta-tienda barber-card">
+            <h2>70cortes7 Supply</h2>
+            <p>Todo en insumos, herramientas y suministros para barberías.</p>
+            <a href="barberia.html" class="btn-entrar">Entrar a la Tienda</a>
         </div>
     </main>
 
-    <script src="script.js"></script>
 </body>
 </html>
