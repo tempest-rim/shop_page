@@ -1,64 +1,204 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Estilos Generales y Reset */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-    text-align: center;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0f0f1a;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
-    background-color: #1a1a2e;
-    color: white;
-    padding: 2rem 1rem;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background: linear-gradient(135deg, #16162a 0%, #0f0f1a 100%);
+    border-bottom: 1px solid #232343;
 }
 
-.catalogo {
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #a0a0c0;
+    font-size: 1.1rem;
+}
+
+/* --- PÁGINA DE INICIO (SELECTOR) --- */
+.inicio-body {
+    background-color: #0b0b14;
+}
+
+.header-inicio h1 {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contenedor-tiendas {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    gap: 40px;
+    padding: 3rem 1rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.tarjeta-tienda {
+    background: #16162a;
+    border: 1px solid #2a2a4a;
+    border-radius: 16px;
     padding: 2rem;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.producto {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 15px;
-    max-width: 250px;
-    transition: transform 0.2s;
+.tarjeta-tienda:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(233, 69, 96, 0.2);
 }
 
-.producto:hover {
-    transform: translateY(-5px);
+.card-banner {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.producto img {
-    width: 100%;
+.tarjeta-tienda h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.tarjeta-tienda p {
+    color: #aaaabf;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    height: 70px;
+}
+
+.btn-entrar {
+    display: block;
+    text-decoration: none;
+    padding: 12px;
     border-radius: 8px;
-    object-fit: cover;
+    font-weight: bold;
+    font-size: 1.05rem;
+    transition: background 0.3s, transform 0.2s;
 }
 
-.precio {
-    font-size: 1.25rem;
-    font-weight: bold;
+.btn-anime {
+    background: #e94560;
+    color: white;
+}
+
+.btn-anime:hover {
+    background: #ff5270;
+}
+
+.btn-barber {
+    background: #1f4068;
+    color: white;
+}
+
+.btn-barber:hover {
+    background: #285284;
+}
+
+/* --- INTERIORES DE LAS TIENDAS --- */
+.header-anime h1 {
     color: #e94560;
-    margin: 10px 0;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.3);
+}
+
+.header-barberia h1 {
+    color: #438a5e;
+    text-shadow: 0 0 10px rgba(67, 138, 94, 0.3);
+}
+
+.btn-volver {
+    display: inline-block;
+    color: #a0a0c0;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.btn-volver:hover {
+    color: #fff;
+}
+
+.seccion-tienda {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* Visor de Canva Responsivo (Proporción 16:9) */
+.contenedor-visor {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* Cambiar a 141.4% si tu catálogo de Canva es vertical */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #16162a;
+    border: 1px solid #2a2a4a;
+    margin-bottom: 2rem;
+}
+
+.iframe-canva {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Botones de WhatsApp */
+.contacto-directo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .btn-whatsapp {
+    display: inline-block;
     background-color: #25D366;
     color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
     font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    transition: background 0.3s;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: transform 0.2s, background-color 0.3s;
 }
 
 .btn-whatsapp:hover {
     background-color: #128C7E;
+    transform: scale(1.03);
 }
