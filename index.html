@@ -1,1 +1,40 @@
-<h1>git page<h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda de Figuras Anime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>⛩️ Anime Store ⛩️</h1>
+        <p>Catálogo de Figuras Disponibles</p>
+    </header>
+
+    <main class="catalogo">
+        <!-- Tarjeta de Producto 1 -->
+        <div class="producto">
+            <img src="https://via.placeholder.com/250" alt="Figura Anime 1">
+            <h3>Gojo Satoru - JJK (Banpresto)</h3>
+            <p class="precio">S/. 120.00</p>
+            <button class="btn-whatsapp" onclick="enviarWhatsapp('Gojo Satoru - JJK')">
+                Comprar por WhatsApp
+            </button>
+        </div>
+
+        <!-- Tarjeta de Producto 2 -->
+        <div class="producto">
+            <img src="https://via.placeholder.com/250" alt="Figura Anime 2">
+            <h3>Luffy Gear 5 - One Piece (Bandai)</h3>
+            <p class="precio">S/. 150.00</p>
+            <button class="btn-whatsapp" onclick="enviarWhatsapp('Luffy Gear 5 - One Piece')">
+                Comprar por WhatsApp
+            </button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
