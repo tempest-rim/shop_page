@@ -5,31 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rimuru Store - Tienda de Anime</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Iconos de FontAwesome para dar un acabado más profesional -->
+    <!-- Iconos de FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="tienda-body">
 
+    <!-- CABECERA / HERO SECTION -->
     <header class="header-anime">
         <a href="index.html" class="btn-volver">
             <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
         </a>
-        <h1>⛩️ Rimuru Store ⛩️</h1>
-        <p>Explora nuestro catálogo virtual de figuras. Si te interesa algún producto, contáctanos directamente.</p>
+        <div class="hero-text">
+            <span class="badge-promo">Figuras 100% Originales</span>
+            <h1>⛩️ Rimuru Store ⛩️</h1>
+            <p class="hero-subtitle">Traemos tus personajes favoritos directamente de Japón y EE.UU. a Ayacucho. Encuentra figuras exclusivas, lanzamientos y bases personalizadas en un solo lugar.</p>
+        </div>
     </header>
 
     <main class="seccion-tienda">
-        <!-- Contenedor del Catálogo con tu proporción de aspecto exacta (83.8298%) -->
+        
+        <!-- SECCIÓN 1: EL CATÁLOGO (EL PRODUCTO) -->
+        <h2 class="seccion-titulo">Explora Nuestro Catálogo Virtual</h2>
+        <p class="seccion-sub">Desliza para ver los modelos disponibles actualmente. ¡Actualizamos stock constantemente!</p>
+        
         <div class="contenedor-visor" style="padding-top: 83.8298%;">
             <iframe class="iframe-canva" loading="lazy" src="https://www.canva.com/design/DAHEKmhzAV4/xYz1EtpOw6IgCy9CLBigsQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
         </div>
 
-        <div class="contacto-directo">
-            <!-- Enlace de WhatsApp integrado con los nuevos estilos visuales -->
+        <!-- SECCIÓN 2: BENEFICIOS (¿POR QUÉ COMPRAR AQUÍ?) -->
+        <section class="seccion-beneficios">
+            <h2 class="seccion-titulo">¿Por qué elegir Rimuru Store?</h2>
+            
+            <div class="cuadrícula-beneficios">
+                <div class="tarjeta-beneficio">
+                    <div class="icono-beneficio"><i class="fa-solid fa-circle-check"></i></div>
+                    <h3>Garantía de Originalidad</h3>
+                    <p>Solo trabajamos con marcas líderes (Banpresto, SEGA, Bandai) importadas directamente. Cero imitaciones.</p>
+                </div>
+                
+                <div class="tarjeta-beneficio">
+                    <div class="icono-beneficio"><i class="fa-solid fa-cubes"></i></div>
+                    <h3>Bases 3D Personalizadas</h3>
+                    <p>Diseñamos y fabricamos bases únicas para tus figuras, dándoles estabilidad y un acabado de exhibición premium.</p>
+                </div>
+                
+                <div class="tarjeta-beneficio">
+                    <div class="icono-beneficio"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3>Entregas en Ayacucho</h3>
+                    <p>Hacemos entregas rápidas y seguras en Huamanga, coordinando directamente contigo para tu total comodidad.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: REFERENCIAS / TESTIMONIOS (PRUEBA SOCIAL) -->
+        <section class="seccion-testimonios">
+            <h2 class="seccion-titulo">Lo que dicen nuestros clientes</h2>
+            <p class="seccion-sub">La confianza de la comunidad es nuestra mejor carta de presentación.</p>
+            
+            <div class="contenedor-testimonios">
+                <div class="tarjeta-testimonio">
+                    <div class="estrellas">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="comentario">"La figura de One Piece llegó impecable y 100% original. La base personalizada en 3D que pedí quedó espectacular, le da otra vida en mi repisa."</p>
+                    <span class="cliente">- Carlos R. (Huamanga)</span>
+                </div>
+                
+                <div class="tarjeta-testimonio">
+                    <div class="estrellas">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="comentario">"Excelente atención por WhatsApp. Me asesoraron con los modelos en stock y el envío en Ayacucho fue súper rápido. Totalmente recomendado."</p>
+                    <span class="cliente">- Sofía M. (Ayacucho)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: CIERRE Y ACCIÓN -->
+        <div class="contacto-directo final-cta">
+            <h2>¿Listo para asegurar tu próxima figura?</h2>
+            <p>Escríbenos directamente para consultar stock, coordinar tu entrega o solicitar una base personalizada.</p>
             <a href="https://wa.me/51999999999?text=Hola%20Rimuru%20Store,%20vi%20tu%20catálogo%20de%20Canva%20y%20deseo%20consultar%20por%20una%20figura" target="_blank" class="btn-whatsapp">
-                <i class="fa-brands fa-whatsapp"></i> Hacer Pedido por WhatsApp
+                <i class="fa-brands fa-whatsapp"></i> Consultar Stock por WhatsApp
             </a>
         </div>
+
     </main>
 
 </body>
