@@ -5,200 +5,240 @@
     padding: 0;
 }
 
-body {
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #0f0f1a;
-    color: #ffffff;
-    min-height: 100vh;
+    background-color: #080810;
+}
+
+/* --- CONTENEDOR DE PANTALLA DIVIDIDA --- */
+.split-container {
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
 }
 
-header {
-    text-align: center;
-    padding: 2.5rem 1rem;
-    background: linear-gradient(135deg, #16162a 0%, #0f0f1a 100%);
-    border-bottom: 1px solid #232343;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-header p {
-    color: #a0a0c0;
-    font-size: 1.1rem;
-}
-
-/* --- PÁGINA DE INICIO (SELECTOR) --- */
-.inicio-body {
-    background-color: #0b0b14;
-}
-
-.header-inicio h1 {
-    background: linear-gradient(45deg, #ff416c, #ff4b2b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.contenedor-tiendas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 3rem 1rem;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.tarjeta-tienda {
-    background: #16162a;
-    border: 1px solid #2a2a4a;
-    border-radius: 16px;
-    padding: 2rem;
-    width: 320px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tarjeta-tienda:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(233, 69, 96, 0.2);
-}
-
-.card-banner {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tarjeta-tienda h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #fff;
-}
-
-.tarjeta-tienda p {
-    color: #aaaabf;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-    height: 70px;
-}
-
-.btn-entrar {
-    display: block;
-    text-decoration: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1.05rem;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.btn-anime {
-    background: #e94560;
-    color: white;
-}
-
-.btn-anime:hover {
-    background: #ff5270;
-}
-
-.btn-barber {
-    background: #1f4068;
-    color: white;
-}
-
-.btn-barber:hover {
-    background: #285284;
-}
-
-/* --- INTERIORES DE LAS TIENDAS --- */
-.header-anime h1 {
-    color: #e94560;
-    text-shadow: 0 0 10px rgba(233, 69, 96, 0.3);
-}
-
-.header-barberia h1 {
-    color: #438a5e;
-    text-shadow: 0 0 10px rgba(67, 138, 94, 0.3);
-}
-
-.btn-volver {
-    display: inline-block;
-    color: #a0a0c0;
-    text-decoration: none;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-}
-
-.btn-volver:hover {
-    color: #fff;
-}
-
-.seccion-tienda {
+/* Estilos para cada mitad */
+.split-side {
+    position: relative;
     flex: 1;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;
-    width: 100%;
-    max-width: 950px;
-    margin: 0 auto;
-}
-
-/* Visor de Canva Responsivo (Proporción 16:9) */
-.contenedor-visor {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-top: 56.25%; /* Cambiar a 141.4% si tu catálogo de Canva es vertical */
-    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
-    border-radius: 12px;
+    justify-content: center;
+    text-decoration: none;
     overflow: hidden;
-    background: #16162a;
-    border: 1px solid #2a2a4a;
-    margin-bottom: 2rem;
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.iframe-canva {
+/* Fondos independientes con efecto zoom */
+.split-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: none;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s ease, filter 0.6s ease;
+    filter: brightness(0.4) grayscale(20%);
+    z-index: 1;
 }
 
-/* Botones de WhatsApp */
-.contacto-directo {
-    width: 100%;
+/* Fondos gradientes personalizados para cada marca */
+.bg-anime {
+    background-image: linear-gradient(135deg, #1f102a 0%, #0d0614 100%);
+    /* Sutil aura fucsia para Rimuru Store */
+    box-shadow: inset 0 0 100px rgba(233, 69, 96, 0.2);
+}
+
+.bg-barber {
+    background-image: linear-gradient(135deg, #091a10 0%, #050d08 100%);
+    /* Sutil aura verde/dorada para 70cortes7 */
+    box-shadow: inset 0 0 100px rgba(67, 138, 94, 0.15);
+}
+
+/* Contenido interno */
+.split-content {
+    position: relative;
+    z-index: 2;
     text-align: center;
-    margin-bottom: 2rem;
+    padding: 2rem;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    color: #ffffff;
+    transition: transform 0.5s ease;
 }
 
-.btn-whatsapp {
-    display: inline-block;
-    background-color: #25D366;
-    color: white;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-    transition: transform 0.2s, background-color 0.3s;
+/* Iconos de las Tiendas */
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.btn-whatsapp:hover {
-    background-color: #128C7E;
-    transform: scale(1.03);
+.badge-anime {
+    background: linear-gradient(135deg, #e94560, #ff5270);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.badge-barber {
+    background: linear-gradient(135deg, #438a5e, #5ca979);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Títulos y textos */
+.split-side h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: color 0.3s;
+}
+
+.left h2 {
+    color: #fff;
+}
+
+.right h2 {
+    color: #fff;
+}
+
+.split-side p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #d1d1e0;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Nuevos Botones */
+.btn-split {
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-anime-split {
+    background-color: #e94560;
+    color: #fff;
+}
+
+.btn-barber-split {
+    background-color: #438a5e;
+    color: #fff;
+}
+
+/* --- EFECTOS DE INTERACCIÓN (HOVER) --- */
+
+/* Al pasar sobre Rimuru Store */
+.split-side:hover {
+    flex: 1.4; /* Se ensancha */
+}
+
+.split-side:hover .split-bg {
+    transform: scale(1.05); /* Zoom sutil al fondo */
+    filter: brightness(0.65) grayscale(0%); /* Toma color */
+}
+
+.left:hover h2 {
+    color: #e94560;
+    text-shadow: 0 0 15px rgba(233, 69, 96, 0.4);
+}
+
+.right:hover h2 {
+    color: #5ca979;
+    text-shadow: 0 0 15px rgba(92, 169, 121, 0.4);
+}
+
+.split-side:hover .icon-wrapper {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.left:hover .icon-wrapper {
+    box-shadow: 0 0 25px rgba(233, 69, 96, 0.6);
+}
+
+.right:hover .icon-wrapper {
+    box-shadow: 0 0 25px rgba(67, 138, 94, 0.6);
+}
+
+.split-side:hover .btn-split {
+    transform: translateY(-3px);
+}
+
+.left:hover .btn-anime-split {
+    background-color: #ff5270;
+    box-shadow: 0 8px 25px rgba(233, 69, 96, 0.5);
+}
+
+.right:hover .btn-barber-split {
+    background-color: #5ca979;
+    box-shadow: 0 8px 25px rgba(67, 138, 94, 0.5);
+}
+
+/* --- ADAPTACIÓN PARA CELULARES (DISEÑO RESPONSIVO) --- */
+@media (max-width: 768px) {
+    .split-container {
+        flex-direction: column; /* Se colocan uno abajo de otro */
+    }
+
+    .split-side {
+        flex: 1;
+        width: 100%;
+        height: 50vh;
+        transition: flex 0.5s ease;
+    }
+
+    .split-side:hover {
+        flex: 1.2; /* Animación vertical más suave para móviles */
+    }
+
+    .split-side h2 {
+        font-size: 2.2rem;
+    }
+
+    .split-content {
+        padding: 1rem;
+        gap: 0.8rem;
+    }
+
+    .icon-wrapper {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+    }
+
+    .split-side p {
+        font-size: 0.95rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limita a 2 líneas para no saturar la pantalla del móvil */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .btn-split {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
 }
