@@ -1,4 +1,6 @@
-/* Estilos Generales y Reset */
+/* ==========================================
+   1. ESTILOS GENERALES Y RESET
+   ========================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,13 +9,19 @@
 
 body, html {
     width: 100%;
-    height: 100%;
-    overflow-x: hidden;
+    min-height: 100vh;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: #080810;
+    color: #ffffff;
 }
 
-/* --- CONTENEDOR DE PANTALLA DIVIDIDA --- */
+/* ==========================================
+   2. PÁGINA DE INICIO (PANTALLA DIVIDIDA)
+   ========================================== */
+.inicio-body {
+    overflow: hidden;
+}
+
 .split-container {
     display: flex;
     width: 100%;
@@ -43,20 +51,18 @@ body, html {
     background-size: cover;
     background-position: center;
     transition: transform 0.8s ease, filter 0.6s ease;
-    filter: brightness(0.4) grayscale(20%);
+    filter: brightness(0.35) grayscale(15%);
     z-index: 1;
 }
 
 /* Fondos gradientes personalizados para cada marca */
 .bg-anime {
     background-image: linear-gradient(135deg, #1f102a 0%, #0d0614 100%);
-    /* Sutil aura fucsia para Rimuru Store */
     box-shadow: inset 0 0 100px rgba(233, 69, 96, 0.2);
 }
 
 .bg-barber {
     background-image: linear-gradient(135deg, #091a10 0%, #050d08 100%);
-    /* Sutil aura verde/dorada para 70cortes7 */
     box-shadow: inset 0 0 100px rgba(67, 138, 94, 0.15);
 }
 
@@ -110,14 +116,6 @@ body, html {
     transition: color 0.3s;
 }
 
-.left h2 {
-    color: #fff;
-}
-
-.right h2 {
-    color: #fff;
-}
-
 .split-side p {
     font-size: 1.05rem;
     line-height: 1.6;
@@ -149,16 +147,14 @@ body, html {
     color: #fff;
 }
 
-/* --- EFECTOS DE INTERACCIÓN (HOVER) --- */
-
-/* Al pasar sobre Rimuru Store */
+/* --- EFECTOS HOVER (PC) --- */
 .split-side:hover {
-    flex: 1.4; /* Se ensancha */
+    flex: 1.4;
 }
 
 .split-side:hover .split-bg {
-    transform: scale(1.05); /* Zoom sutil al fondo */
-    filter: brightness(0.65) grayscale(0%); /* Toma color */
+    transform: scale(1.05);
+    filter: brightness(0.6) grayscale(0%);
 }
 
 .left:hover h2 {
@@ -197,10 +193,156 @@ body, html {
     box-shadow: 0 8px 25px rgba(67, 138, 94, 0.5);
 }
 
-/* --- ADAPTACIÓN PARA CELULARES (DISEÑO RESPONSIVO) --- */
+
+/* ==========================================
+   3. ESTILOS PARA LAS PÁGINAS INTERNAS (TIENDAS)
+   ========================================== */
+.tienda-body {
+    background-color: #0c0c14;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Encabezados de Tienda */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(180deg, #141424 0%, #0c0c14 100%);
+    border-bottom: 1px solid #1f1f38;
+}
+
+header h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #a0a0c0;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Estilos de Marca Específicos */
+.header-anime h1 {
+    color: #e94560;
+    text-shadow: 0 0 15px rgba(233, 69, 96, 0.3);
+}
+
+.header-barberia h1 {
+    color: #438a5e;
+    text-shadow: 0 0 15px rgba(67, 138, 94, 0.3);
+}
+
+/* Botón Volver */
+.btn-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #8a8ab0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.btn-volver:hover {
+    color: #ffffff;
+    transform: translateX(-3px);
+}
+
+/* Contenedor de la Sección */
+.seccion-tienda {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* Contenedor del Visor de Canva (Responsivo 16:9 o 141.4% vertical) */
+.contenedor-visor {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* Relación de aspecto 16:9 (Horizontal) */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #16162a;
+    border: 1px solid #242445;
+    margin-bottom: 2.5rem;
+}
+
+/* Si tu catálogo es vertical, añade esta clase en tu HTML junto a contenedor-visor */
+.contenedor-visor.vertical {
+    padding-top: 141.4%; /* Proporción A4 / folleto vertical */
+}
+
+.iframe-canva {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Sección de Contacto Directo */
+.contacto-directo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contacto-directo p {
+    color: #a0a0c0;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Botón de WhatsApp */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+    transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-whatsapp i {
+    font-size: 1.3rem;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+}
+
+
+/* ==========================================
+   4. ADAPTACIÓN PARA MÓVILES (RESPONSIVE)
+   ========================================== */
 @media (max-width: 768px) {
+    /* Inicio en móviles */
     .split-container {
-        flex-direction: column; /* Se colocan uno abajo de otro */
+        flex-direction: column;
     }
 
     .split-side {
@@ -211,7 +353,7 @@ body, html {
     }
 
     .split-side:hover {
-        flex: 1.2; /* Animación vertical más suave para móviles */
+        flex: 1.15;
     }
 
     .split-side h2 {
@@ -232,13 +374,38 @@ body, html {
     .split-side p {
         font-size: 0.95rem;
         display: -webkit-box;
-        -webkit-line-clamp: 2; /* Limita a 2 líneas para no saturar la pantalla del móvil */
+        -webkit-line-clamp: 2; /* Limita texto a 2 líneas para que no sature */
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
 
     .btn-split {
-        padding: 10px 20px;
+        padding: 10px 22px;
         font-size: 0.9rem;
+    }
+
+    /* Interiores en móviles */
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .seccion-tienda {
+        padding: 1.5rem 0.8rem;
+    }
+
+    .contenedor-visor {
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-whatsapp {
+        padding: 12px 25px;
+        font-size: 1rem;
+        width: 90%; /* Se adapta al ancho de la pantalla móvil */
+        justify-content: center;
     }
 }
