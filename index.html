@@ -3,31 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Emprendimientos</title>
+    <title>Bienvenido | Mis Catálogos</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Iconos externos para un look más profesional (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="inicio-body">
 
-    <header>
-        <h1>Bienvenido</h1>
-        <p>Selecciona la tienda que deseas visitar</p>
-    </header>
+    <div class="split-container">
+        
+        <!-- LADO RIMURU STORE -->
+        <a href="rimurustore.html" class="split-side left">
+            <div class="split-bg bg-anime"></div>
+            <div class="split-content">
+                <div class="icon-wrapper badge-anime">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <h2>Rimuru Store</h2>
+                <p>Importación de figuras exclusivas de anime, coleccionables y bases 3D personalizadas.</p>
+                <span class="btn-split btn-anime-split">
+                    Ver Catálogo Anime <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </div>
+        </a>
 
-    <main class="contenedor-tiendas">
-        <!-- Tarjeta Tienda de Anime -->
-        <div class="tarjeta-tienda anime-card">
-            <h2>Rimuru Store</h2>
-            <p>Figuras coleccionables e importaciones exclusivas de anime.</p>
-            <a href="anime.html" class="btn-entrar">Entrar a la Tienda</a>
-        </div>
+        <!-- LADO 70CORTES7 -->
+        <a href="70cortes7.html" class="split-side right">
+            <div class="split-bg bg-barber"></div>
+            <div class="split-content">
+                <div class="icon-wrapper badge-barber">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+                <h2>70cortes7</h2>
+                <p>Estilo, barbería profesional y los mejores insumos para el cuidado de tu cabello y barba.</p>
+                <span class="btn-split btn-barber-split">
+                    Ver Servicios & Insumos <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </div>
+        </a>
 
-        <!-- Tarjeta Tienda de Barbería -->
-        <div class="tarjeta-tienda barber-card">
-            <h2>70cortes7 Supply</h2>
-            <p>Todo en insumos, herramientas y suministros para barberías.</p>
-            <a href="barberia.html" class="btn-entrar">Entrar a la Tienda</a>
-        </div>
-    </main>
+    </div>
 
 </body>
 </html>
