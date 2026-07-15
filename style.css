@@ -409,3 +409,180 @@ header p {
         justify-content: center;
     }
 }
+
+/* ==========================================
+   5. NUEVOS ESTILOS ESTILO "LANDING PAGE"
+   ========================================== */
+
+/* Subtítulos y cabeceras internas */
+.hero-text {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-subtitle {
+    margin-top: 1rem !important;
+    font-size: 1.15rem !important;
+    line-height: 1.7 !important;
+}
+
+.badge-promo {
+    display: inline-block;
+    background-color: rgba(233, 69, 96, 0.15);
+    color: #e94560;
+    border: 1px solid rgba(233, 69, 96, 0.3);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.seccion-titulo {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.seccion-sub {
+    color: #a0a0c0;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+
+/* Sección Beneficios */
+.seccion-beneficios {
+    width: 100%;
+    padding: 3rem 0;
+    border-top: 1px solid #1f1f38;
+}
+
+.cuadrícula-beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 2rem;
+}
+
+.tarjeta-beneficio {
+    background: #121224;
+    border: 1px solid #1f1f38;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-beneficio:hover {
+    transform: translateY(-5px);
+    border-color: #e94560;
+}
+
+.icono-beneficio {
+    font-size: 2.5rem;
+    color: #e94560;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-beneficio h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+}
+
+.tarjeta-beneficio p {
+    color: #a0a0c0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Sección Testimonios (Referencias) */
+.seccion-testimonios {
+    width: 100%;
+    padding: 3rem 0;
+    border-top: 1px solid #1f1f38;
+}
+
+.contenedor-testimonios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.tarjeta-testimonio {
+    background: #16162a;
+    border: 1px solid #242445;
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.estrellas {
+    color: #ffc107;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.comentario {
+    font-style: italic;
+    color: #e2e2f0;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cliente {
+    color: #e94560;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Sección de Cierre (Final CTA) */
+.final-cta {
+    background: linear-gradient(135deg, #16162a 0%, #0d0614 100%);
+    border: 1px solid #242445;
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    margin-top: 2rem;
+}
+
+.final-cta h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.final-cta p {
+    max-width: 550px;
+    margin: 0 auto 2rem auto;
+    color: #a0a0c0;
+    line-height: 1.6;
+}
+
+/* Ajustes responsivos móviles para nuevas secciones */
+@media (max-width: 768px) {
+    .seccion-titulo {
+        font-size: 1.6rem;
+    }
+    
+    .cuadrícula-beneficios {
+        grid-template-columns: 1fr;
+    }
+    
+    .final-cta {
+        padding: 2rem 1rem;
+    }
+}
