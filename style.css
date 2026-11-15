@@ -1,588 +1,975 @@
-/* ==========================================
-   1. ESTILOS GENERALES Y RESET
-   ========================================== */
+
+:root {
+    --black: #151619;
+    --black-soft: #202126;
+    --red: #D92332;
+    --red-dark: #B91E2B;
+    --white: #F4F2EE;
+    --gray: #777777;
+    --light-gray: #EAE8E4;
+    --font: 'Montserrat', sans-serif;
+    --display: 'Rajdhani', sans-serif;
+}
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body, html {
-    width: 100%;
-    min-height: 100vh;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #080810;
-    color: #ffffff;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
-/* ==========================================
-   2. PÁGINA DE INICIO (PANTALLA DIVIDIDA)
-   ========================================== */
-.inicio-body {
-    overflow: hidden;
-}
-
-.split-container {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    flex-direction: row;
-}
-
-/* Estilos para cada mitad */
-.split-side {
-    position: relative;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    overflow: hidden;
-    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* Fondos independientes con efecto zoom */
-.split-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.8s ease, filter 0.6s ease;
-    filter: brightness(0.35) grayscale(15%);
-    z-index: 1;
-}
-
-/* Fondos gradientes personalizados para cada marca */
-.bg-anime {
-    background-image: linear-gradient(135deg, #1f102a 0%, #0d0614 100%);
-    box-shadow: inset 0 0 100px rgba(233, 69, 96, 0.2);
-}
-
-.bg-barber {
-    background-image: linear-gradient(135deg, #091a10 0%, #050d08 100%);
-    box-shadow: inset 0 0 100px rgba(67, 138, 94, 0.15);
-}
-
-/* Contenido interno */
-.split-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 2rem;
-    max-width: 420px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    color: #ffffff;
-    transition: transform 0.5s ease;
-}
-
-/* Iconos de las Tiendas */
-.icon-wrapper {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.2rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.badge-anime {
-    background: linear-gradient(135deg, #e94560, #ff5270);
-    color: #fff;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.badge-barber {
-    background: linear-gradient(135deg, #438a5e, #5ca979);
-    color: #fff;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Títulos y textos */
-.split-side h2 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    transition: color 0.3s;
-}
-
-.split-side p {
-    font-size: 1.05rem;
+body {
+    font-family: var(--font);
+    color: var(--black);
+    background: var(--white);
     line-height: 1.6;
-    color: #d1d1e0;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-/* Nuevos Botones */
-.btn-split {
-    padding: 14px 28px;
-    border-radius: 40px;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font: inherit;
+}
+
+/* TOPBAR */
+
+.topbar {
+    background: var(--red);
+    color: white;
+    text-align: center;
+    padding: 8px 15px;
+    font-size: 10px;
     font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 2px;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: var(--black);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 7%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.logo span {
+    font-family: var(--display);
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.logo small {
+    font-size: 8px;
+    color: #aaa;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    font-size: 11px;
+    color: #ccc;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-cta {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px solid var(--red);
+    padding: 11px 17px;
+    transition: .3s;
+}
+
+.nav-cta:hover {
+    background: var(--red);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    background: var(--black);
+    color: white;
+    min-height: 580px;
+    padding: 70px 8%;
+    display: grid;
+    grid-template-columns: 1fr .85fr;
+    align-items: center;
+    gap: 65px;
+    overflow: hidden;
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--red);
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
 }
 
-.btn-anime-split {
-    background-color: #e94560;
-    color: #fff;
+.red-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--red);
 }
 
-.btn-barber-split {
-    background-color: #438a5e;
-    color: #fff;
+.hero h1 {
+    font-family: var(--display);
+    font-size: clamp(48px, 6vw, 78px);
+    line-height: .98;
+    margin: 25px 0;
+    letter-spacing: -1px;
 }
 
-/* --- EFECTOS HOVER (PC) --- */
-.split-side:hover {
-    flex: 1.4;
+.hero h1 span {
+    color: var(--red);
 }
 
-.split-side:hover .split-bg {
-    transform: scale(1.05);
-    filter: brightness(0.6) grayscale(0%);
+.hero-content > p {
+    color: #bbb;
+    font-size: 14px;
+    max-width: 450px;
+    line-height: 1.9;
 }
 
-.left:hover h2 {
-    color: #e94560;
-    text-shadow: 0 0 15px rgba(233, 69, 96, 0.4);
-}
-
-.right:hover h2 {
-    color: #5ca979;
-    text-shadow: 0 0 15px rgba(92, 169, 121, 0.4);
-}
-
-.split-side:hover .icon-wrapper {
-    transform: scale(1.15) rotate(5deg);
-}
-
-.left:hover .icon-wrapper {
-    box-shadow: 0 0 25px rgba(233, 69, 96, 0.6);
-}
-
-.right:hover .icon-wrapper {
-    box-shadow: 0 0 25px rgba(67, 138, 94, 0.6);
-}
-
-.split-side:hover .btn-split {
-    transform: translateY(-3px);
-}
-
-.left:hover .btn-anime-split {
-    background-color: #ff5270;
-    box-shadow: 0 8px 25px rgba(233, 69, 96, 0.5);
-}
-
-.right:hover .btn-barber-split {
-    background-color: #5ca979;
-    box-shadow: 0 8px 25px rgba(67, 138, 94, 0.5);
-}
-
-
-/* ==========================================
-   3. ESTILOS PARA LAS PÁGINAS INTERNAS (TIENDAS)
-   ========================================== */
-.tienda-body {
-    background-color: #0c0c14;
+.hero-buttons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 32px;
 }
 
-/* Encabezados de Tienda */
-header {
-    width: 100%;
-    text-align: center;
-    padding: 2rem 1rem;
-    background: linear-gradient(180deg, #141424 0%, #0c0c14 100%);
-    border-bottom: 1px solid #1f1f38;
-}
-
-header h1 {
-    font-size: 2.3rem;
-    font-weight: 800;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-header p {
-    color: #a0a0c0;
-    font-size: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Estilos de Marca Específicos */
-.header-anime h1 {
-    color: #e94560;
-    text-shadow: 0 0 15px rgba(233, 69, 96, 0.3);
-}
-
-.header-barberia h1 {
-    color: #438a5e;
-    text-shadow: 0 0 15px rgba(67, 138, 94, 0.3);
-}
-
-/* Botón Volver */
-.btn-volver {
+.btn-primary,
+.btn-outline {
     display: inline-flex;
+    justify-content: center;
     align-items: center;
-    gap: 8px;
-    color: #8a8ab0;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 600;
-    transition: color 0.2s, transform 0.2s;
+    gap: 12px;
+    padding: 15px 22px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: .3s;
 }
 
-.btn-volver:hover {
-    color: #ffffff;
-    transform: translateX(-3px);
+.btn-primary {
+    background: var(--red);
+    color: white;
 }
 
-/* Contenedor de la Sección */
-.seccion-tienda {
-    flex: 1;
+.btn-primary:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid #555;
+    color: white;
+}
+
+.btn-outline:hover {
+    border-color: white;
+}
+
+.hero-location {
+    margin-top: 40px;
+    color: #aaa;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.hero-location i {
+    color: var(--red);
+    margin-right: 8px;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.image-label {
+    background: var(--red);
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: -25px;
+    padding: 15px 22px;
     display: flex;
     flex-direction: column;
+    font-family: var(--display);
+    letter-spacing: 1px;
+}
+
+.image-label span {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.image-label small {
+    font-size: 9px;
+}
+
+/* TRUST STRIP */
+
+.trust-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 30px 8%;
+    background: white;
+    border-bottom: 1px solid var(--light-gray);
+    gap: 20px;
+}
+
+.trust-item {
+    display: flex;
     align-items: center;
-    padding: 2.5rem 1rem;
-    width: 100%;
-    max-width: 950px;
-    margin: 0 auto;
+    gap: 15px;
 }
 
-/* Contenedor del Visor de Canva (Responsivo 16:9 o 141.4% vertical) */
-.contenedor-visor {
+.trust-item > i {
+    color: var(--red);
+    font-size: 23px;
+}
+
+.trust-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.trust-item strong {
+    font-size: 11px;
+}
+
+.trust-item small {
+    color: var(--gray);
+    font-size: 10px;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+    padding: 90px 8%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 35px;
+    gap: 20px;
+}
+
+.section-heading h2,
+.catalog-content h2,
+.about-content h2,
+.contact-section h2 {
+    font-family: var(--display);
+    font-size: clamp(34px, 4vw, 48px);
+    line-height: 1.1;
+    margin-top: 10px;
+}
+
+.section-heading > p {
+    max-width: 320px;
+    color: var(--gray);
+    font-size: 12px;
+}
+
+.text-link {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--red);
+}
+
+/* COLLECTIONS */
+
+.collections {
+    background: var(--white);
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.collection-card {
+    height: 370px;
     position: relative;
-    width: 100%;
-    height: 0;
-    padding-top: 56.25%; /* Relación de aspecto 16:9 (Horizontal) */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-    border-radius: 16px;
     overflow: hidden;
-    background: #16162a;
-    border: 1px solid #242445;
-    margin-bottom: 2.5rem;
+    background: var(--black-soft);
 }
 
-/* Si tu catálogo es vertical, añade esta clase en tu HTML junto a contenedor-visor */
-.contenedor-visor.vertical {
-    padding-top: 141.4%; /* Proporción A4 / folleto vertical */
-}
-
-.iframe-canva {
-    position: absolute;
-    top: 0;
-    left: 0;
+.collection-card img {
     width: 100%;
     height: 100%;
-    border: none;
+    object-fit: cover;
+    opacity: .78;
+    transition: .5s;
 }
 
-/* Sección de Contacto Directo */
-.contacto-directo {
+.collection-card:hover img {
+    transform: scale(1.06);
+    opacity: .95;
+}
+
+.collection-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 28px;
+    color: white;
+    background: linear-gradient(transparent 20%, rgba(0,0,0,.85));
+}
+
+.collection-overlay span {
+    color: #ddd;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.collection-overlay h3 {
+    font-family: var(--display);
+    font-size: 38px;
+}
+
+.collection-overlay small {
+    color: #ddd;
+    font-size: 10px;
+}
+
+/* FEATURED PRODUCTS */
+
+.featured {
+    background: white;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.product-card {
+    border: 1px solid #eaeaea;
+    transition: .3s;
+    background: white;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.07);
+}
+
+.product-image {
+    height: 300px;
+    background: #f2f2f2;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.04);
+}
+
+.product-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+    background: var(--red);
+    color: white;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 7px 10px;
+    letter-spacing: 1px;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-category {
+    color: var(--red);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    margin: 7px 0;
+}
+
+.product-info p {
+    font-size: 11px;
+    color: var(--gray);
+    margin-bottom: 18px;
+}
+
+.product-button {
+    display: block;
     text-align: center;
-    margin-bottom: 3rem;
+    padding: 12px;
+    background: var(--black);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: .3s;
 }
 
-.contacto-directo p {
-    color: #a0a0c0;
-    font-size: 1.1rem;
-    margin-bottom: 1.2rem;
+.product-button:hover {
+    background: var(--red);
 }
 
-/* Botón de WhatsApp */
-.btn-whatsapp {
-    display: inline-flex;
+.demo-notice {
+    font-size: 10px;
+    color: var(--gray);
+    margin-top: 20px;
+}
+
+/* CANVA CATALOG */
+
+.catalog-section {
+    background: var(--black);
+    color: white;
+}
+
+.catalog-content {
+    text-align: center;
+    max-width: 650px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.catalog-content p {
+    color: #bbb;
+    font-size: 12px;
+    margin-top: 18px;
+    line-height: 1.9;
+}
+
+.catalog-viewer {
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    background: white;
+    border-radius: 4px;
+}
+
+.catalog-viewer iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.catalog-note {
+    font-size: 10px;
+    color: #aaa;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ABOUT */
+
+.about-section {
+    background: #e9e7e3;
+    padding: 90px 8%;
+    display: grid;
+    grid-template-columns: .9fr 1fr;
+    gap: 70px;
     align-items: center;
-    gap: 10px;
-    background-color: #25D366;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 15px 35px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
-    transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
 }
 
-.btn-whatsapp i {
-    font-size: 1.3rem;
+.about-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
 }
 
-.btn-whatsapp:hover {
-    background-color: #128C7E;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+.about-content h2 {
+    margin: 20px 0;
 }
 
+.about-content h2 span {
+    color: var(--red);
+}
 
-/* ==========================================
-   4. ADAPTACIÓN PARA MÓVILES (RESPONSIVE)
-   ========================================== */
-@media (max-width: 768px) {
-    /* Inicio en móviles */
-    .split-container {
+.about-content p {
+    color: #666;
+    font-size: 12px;
+    line-height: 2;
+    margin-bottom: 15px;
+}
+
+.about-signature {
+    border-left: 3px solid var(--red);
+    padding-left: 15px;
+    margin-top: 30px;
+    font-family: var(--display);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.about-signature small {
+    display: block;
+    font-family: var(--font);
+    font-size: 9px;
+    color: var(--gray);
+}
+
+/* BUYING STEPS */
+
+.shipping-section {
+    background: white;
+}
+
+.centered {
+    justify-content: center;
+    text-align: center;
+}
+
+.centered p {
+    margin: 12px auto 0;
+    color: var(--gray);
+    font-size: 12px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.step-card {
+    background: var(--white);
+    padding: 28px 22px;
+    min-height: 210px;
+    position: relative;
+}
+
+.step-card > span {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    font-family: var(--display);
+    color: #ccc;
+    font-size: 25px;
+}
+
+.step-card > i {
+    color: var(--red);
+    font-size: 25px;
+    margin: 20px 0;
+}
+
+.step-card h3 {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    font-size: 10px;
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+.shipping-banner {
+    background: var(--black);
+    color: white;
+    margin-top: 30px;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.shipping-banner > i {
+    font-size: 32px;
+    color: var(--red);
+}
+
+.shipping-banner h3 {
+    font-family: var(--display);
+    font-size: 24px;
+}
+
+.shipping-banner p {
+    font-size: 11px;
+    color: #bbb;
+}
+
+/* FAQ */
+
+.faq-section {
+    background: var(--white);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: auto;
+}
+
+.faq-list details {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 5px;
+}
+
+.faq-list summary {
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.faq-list summary::after {
+    content: '+';
+    color: var(--red);
+    font-size: 20px;
+}
+
+.faq-list details[open] summary::after {
+    content: '−';
+}
+
+.faq-list details p {
+    color: var(--gray);
+    font-size: 11px;
+    padding-top: 15px;
+    line-height: 1.9;
+}
+
+/* CONTACT */
+
+.contact-section {
+    background: var(--black);
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.contact-section h2 {
+    margin: 20px 0;
+}
+
+.contact-section p {
+    font-size: 12px;
+    color: #bbb;
+    margin-bottom: 28px;
+}
+
+.contact-section .btn-primary {
+    display: inline-flex;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #101114;
+    color: white;
+    padding: 60px 8% 20px;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 45px;
+    padding-bottom: 45px;
+}
+
+.footer-brand p {
+    max-width: 260px;
+    color: #999;
+    font-size: 11px;
+    margin-top: 20px;
+    line-height: 1.9;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-column h4 {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    color: #999;
+    font-size: 10px;
+    transition: .3s;
+}
+
+.footer-column a:hover {
+    color: var(--red);
+}
+
+.footer-bottom {
+    border-top: 1px solid #303030;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #888;
+    font-size: 9px;
+}
+
+/* WHATSAPP */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #25D366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    z-index: 200;
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+    transition: .3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 60px 5%;
+        gap: 35px;
+    }
+
+    .trust-strip {
+        padding: 25px 5%;
+    }
+
+    .section,
+    .about-section {
+        padding: 70px 5%;
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        order: 3;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 13px 0;
+        border-top: 1px solid #333;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 55px 7%;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero-image img {
+        height: 350px;
+    }
+
+    .image-label {
+        left: 10px;
+    }
+
+    .trust-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 15px;
+    }
+
+    .section-heading {
+        align-items: start;
         flex-direction: column;
     }
 
-    .split-side {
-        flex: 1;
-        width: 100%;
-        height: 50vh;
-        transition: flex 0.5s ease;
-    }
-
-    .split-side:hover {
-        flex: 1.15;
-    }
-
-    .split-side h2 {
-        font-size: 2.2rem;
-    }
-
-    .split-content {
-        padding: 1rem;
-        gap: 0.8rem;
-    }
-
-    .icon-wrapper {
-        width: 60px;
-        height: 60px;
-        font-size: 1.6rem;
-    }
-
-    .split-side p {
-        font-size: 0.95rem;
-        display: -webkit-box;
-        -webkit-line-clamp: 2; /* Limita texto a 2 líneas para que no sature */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .btn-split {
-        padding: 10px 22px;
-        font-size: 0.9rem;
-    }
-
-    /* Interiores en móviles */
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    header p {
-        font-size: 0.9rem;
-    }
-
-    .seccion-tienda {
-        padding: 1.5rem 0.8rem;
-    }
-
-    .contenedor-visor {
-        border-radius: 10px;
-        margin-bottom: 1.5rem;
-    }
-
-    .btn-whatsapp {
-        padding: 12px 25px;
-        font-size: 1rem;
-        width: 90%; /* Se adapta al ancho de la pantalla móvil */
-        justify-content: center;
-    }
-}
-
-/* ==========================================
-   5. NUEVOS ESTILOS ESTILO "LANDING PAGE"
-   ========================================== */
-
-/* Subtítulos y cabeceras internas */
-.hero-text {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.hero-subtitle {
-    margin-top: 1rem !important;
-    font-size: 1.15rem !important;
-    line-height: 1.7 !important;
-}
-
-.badge-promo {
-    display: inline-block;
-    background-color: rgba(233, 69, 96, 0.15);
-    color: #e94560;
-    border: 1px solid rgba(233, 69, 96, 0.3);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-}
-
-.seccion-titulo {
-    font-size: 2rem;
-    font-weight: 800;
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-}
-
-.seccion-sub {
-    color: #a0a0c0;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.05rem;
-}
-
-/* Sección Beneficios */
-.seccion-beneficios {
-    width: 100%;
-    padding: 3rem 0;
-    border-top: 1px solid #1f1f38;
-}
-
-.cuadrícula-beneficios {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    margin-top: 2rem;
-}
-
-.tarjeta-beneficio {
-    background: #121224;
-    border: 1px solid #1f1f38;
-    border-radius: 12px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.tarjeta-beneficio:hover {
-    transform: translateY(-5px);
-    border-color: #e94560;
-}
-
-.icono-beneficio {
-    font-size: 2.5rem;
-    color: #e94560;
-    margin-bottom: 1rem;
-}
-
-.tarjeta-beneficio h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
-    color: #ffffff;
-}
-
-.tarjeta-beneficio p {
-    color: #a0a0c0;
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-/* Sección Testimonios (Referencias) */
-.seccion-testimonios {
-    width: 100%;
-    padding: 3rem 0;
-    border-top: 1px solid #1f1f38;
-}
-
-.contenedor-testimonios {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.tarjeta-testimonio {
-    background: #16162a;
-    border: 1px solid #242445;
-    border-radius: 16px;
-    padding: 2rem;
-    width: 100%;
-    max-width: 440px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.estrellas {
-    color: #ffc107;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-}
-
-.comentario {
-    font-style: italic;
-    color: #e2e2f0;
-    line-height: 1.6;
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.cliente {
-    color: #e94560;
-    font-weight: 700;
-    font-size: 0.9rem;
-}
-
-/* Sección de Cierre (Final CTA) */
-.final-cta {
-    background: linear-gradient(135deg, #16162a 0%, #0d0614 100%);
-    border: 1px solid #242445;
-    border-radius: 16px;
-    padding: 3rem 2rem;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-    margin-top: 2rem;
-}
-
-.final-cta h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.final-cta p {
-    max-width: 550px;
-    margin: 0 auto 2rem auto;
-    color: #a0a0c0;
-    line-height: 1.6;
-}
-
-/* Ajustes responsivos móviles para nuevas secciones */
-@media (max-width: 768px) {
-    .seccion-titulo {
-        font-size: 1.6rem;
-    }
-    
-    .cuadrícula-beneficios {
+    .collection-grid {
         grid-template-columns: 1fr;
     }
-    
-    .final-cta {
-        padding: 2rem 1rem;
+
+    .collection-card {
+        height: 320px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 340px;
+    }
+
+    .catalog-viewer {
+        height: 550px;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-image img {
+        height: 320px;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .topbar {
+        font-size: 8px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .trust-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-viewer {
+        height: 460px;
+    }
+
+    .shipping-banner {
+        align-items: flex-start;
+        padding: 22px 18px;
     }
 }
