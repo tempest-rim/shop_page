@@ -1,96 +1,517 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rimuru Store - Tienda de Anime</title>
+
+    <title>NEKORA Figuras | Anime & Coleccionismo</title>
+    <meta name="description" content="Descubre figuras de anime, videojuegos y cultura geek en NEKORA Figuras. Envíos a todo el Perú por Shalom. Desde Ayacucho.">
+
+    <meta name="theme-color" content="#151619">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-    <!-- Iconos de FontAwesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="tienda-body">
 
-    <!-- CABECERA / HERO SECTION -->
-    <header class="header-anime">
-        <a href="index.html" class="btn-volver">
-            <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
-        </a>
-        <div class="hero-text">
-            <span class="badge-promo">Figuras 100% Originales</span>
-            <h1>⛩️ Rimuru Store ⛩️</h1>
-            <p class="hero-subtitle">Traemos tus personajes favoritos directamente de Japón y EE.UU. a Ayacucho. Encuentra figuras exclusivas, lanzamientos y bases personalizadas en un solo lugar.</p>
-        </div>
-    </header>
+<body>
 
-    <main class="seccion-tienda">
-        
-        <!-- SECCIÓN 1: EL CATÁLOGO (EL PRODUCTO) -->
-        <h2 class="seccion-titulo">Explora Nuestro Catálogo Virtual</h2>
-        <p class="seccion-sub">Desliza para ver los modelos disponibles actualmente. ¡Actualizamos stock constantemente!</p>
-        
-        <div class="contenedor-visor" style="padding-top: 83.8298%;">
-            <iframe class="iframe-canva" loading="lazy" src="https://www.canva.com/design/DAHEKmhzAV4/xYz1EtpOw6IgCy9CLBigsQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
-        </div>
+<!-- BARRA SUPERIOR -->
+<div class="topbar">
+    <p>ENVÍOS A TODO EL PERÚ · DESDE AYACUCHO</p>
+</div>
 
-        <!-- SECCIÓN 2: BENEFICIOS (¿POR QUÉ COMPRAR AQUÍ?) -->
-        <section class="seccion-beneficios">
-            <h2 class="seccion-titulo">¿Por qué elegir Rimuru Store?</h2>
-            
-            <div class="cuadrícula-beneficios">
-                <div class="tarjeta-beneficio">
-                    <div class="icono-beneficio"><i class="fa-solid fa-circle-check"></i></div>
-                    <h3>Garantía de Originalidad</h3>
-                    <p>Solo trabajamos con marcas líderes (Banpresto, SEGA, Bandai) importadas directamente. Cero imitaciones.</p>
-                </div>
-                
-                <div class="tarjeta-beneficio">
-                    <div class="icono-beneficio"><i class="fa-solid fa-cubes"></i></div>
-                    <h3>Bases 3D Personalizadas</h3>
-                    <p>Diseñamos y fabricamos bases únicas para tus figuras, dándoles estabilidad y un acabado de exhibición premium.</p>
-                </div>
-                
-                <div class="tarjeta-beneficio">
-                    <div class="icono-beneficio"><i class="fa-solid fa-truck-fast"></i></div>
-                    <h3>Entregas en Ayacucho</h3>
-                    <p>Hacemos entregas rápidas y seguras en Huamanga, coordinando directamente contigo para tu total comodidad.</p>
-                </div>
-            </div>
-        </section>
+<!-- NAVEGACIÓN -->
+<header class="navbar">
+    <a href="#" class="logo">
+        <span>NEKORA</span>
+        <small>FIGURAS / COLLECTOR CULTURE</small>
+    </a>
 
-        <!-- SECCIÓN 3: REFERENCIAS / TESTIMONIOS (PRUEBA SOCIAL) -->
-        <section class="seccion-testimonios">
-            <h2 class="seccion-titulo">Lo que dicen nuestros clientes</h2>
-            <p class="seccion-sub">La confianza de la comunidad es nuestra mejor carta de presentación.</p>
-            
-            <div class="contenedor-testimonios">
-                <div class="tarjeta-testimonio">
-                    <div class="estrellas">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="comentario">"La figura de One Piece llegó impecable y 100% original. La base personalizada en 3D que pedí quedó espectacular, le da otra vida en mi repisa."</p>
-                    <span class="cliente">- Carlos R. (Huamanga)</span>
-                </div>
-                
-                <div class="tarjeta-testimonio">
-                    <div class="estrellas">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="comentario">"Excelente atención por WhatsApp. Me asesoraron con los modelos en stock y el envío en Ayacucho fue súper rápido. Totalmente recomendado."</p>
-                    <span class="cliente">- Sofía M. (Ayacucho)</span>
-                </div>
-            </div>
-        </section>
+    <nav class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#colecciones">Colecciones</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 
-        <!-- SECCIÓN 4: CIERRE Y ACCIÓN -->
-        <div class="contacto-directo final-cta">
-            <h2>¿Listo para asegurar tu próxima figura?</h2>
-            <p>Escríbenos directamente para consultar stock, coordinar tu entrega o solicitar una base personalizada.</p>
-            <a href="https://wa.me/51999999999?text=Hola%20Rimuru%20Store,%20vi%20tu%20catálogo%20de%20Canva%20y%20deseo%20consultar%20por%20una%20figura" target="_blank" class="btn-whatsapp">
-                <i class="fa-brands fa-whatsapp"></i> Consultar Stock por WhatsApp
+    <a href="#catalogo" class="nav-cta">
+        EXPLORAR <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</header>
+
+<main>
+
+<!-- HERO PRINCIPAL -->
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+        <span class="eyebrow">
+            <span class="red-dot"></span>
+            ANIME · VIDEOJUEGOS · CULTURA GEEK
+        </span>
+
+        <h1>
+            COLECCIONA<br>
+            LO <span>EXTRAORDINARIO.</span>
+        </h1>
+
+        <p>
+            Piezas para quienes viven cada historia.
+            Encuentra tu próxima figura favorita y
+            lleva tu colección al siguiente nivel.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#catalogo" class="btn-primary">
+                EXPLORAR COLECCIÓN
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#nosotros" class="btn-outline">
+                CONOCE NEKORA
             </a>
         </div>
 
-    </main>
+        <div class="hero-location">
+            <i class="fa-solid fa-location-dot"></i>
+            AYACUCHO, PERÚ
+        </div>
+    </div>
+
+    <div class="hero-image">
+        <!-- REEMPLAZAR CON FOTO REAL DE TUS FIGURAS -->
+        <img src="https://placehold.co/800x950/202126/ffffff?text=NEKORA+FIGURAS"
+             alt="Colección de figuras NEKORA">
+        <div class="image-label">
+            <span>NEKORA COLLECTION</span>
+            <small>YOUR UNIVERSE. YOUR COLLECTION.</small>
+        </div>
+    </div>
+
+</section>
+
+<!-- BENEFICIOS RÁPIDOS -->
+<section class="trust-strip">
+
+    <div class="trust-item">
+        <i class="fa-solid fa-box"></i>
+        <div>
+            <strong>Envíos nacionales</strong>
+            <small>Por Shalom</small>
+        </div>
+    </div>
+
+    <div class="trust-item">
+        <i class="fa-brands fa-whatsapp"></i>
+        <div>
+            <strong>Atención directa</strong>
+            <small>Asesoría por WhatsApp</small>
+        </div>
+    </div>
+
+    <div class="trust-item">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div>
+            <strong>Compra informada</strong>
+            <small>Consulta stock y condiciones</small>
+        </div>
+    </div>
+
+    <div class="trust-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+            <strong>Somos de Ayacucho</strong>
+            <small>Perú</small>
+        </div>
+    </div>
+
+</section>
+
+<!-- COLECCIONES -->
+<section class="section collections" id="colecciones">
+
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">DESCUBRE NEKORA</span>
+            <h2>Explora nuestro universo</h2>
+        </div>
+        <p>Encuentra piezas que representan tus historias favoritas.</p>
+    </div>
+
+    <div class="collection-grid">
+
+        <a href="#catalogo" class="collection-card">
+            <img src="https://placehold.co/700x850/242126/ffffff?text=ANIME"
+                 alt="Figuras de anime">
+            <div class="collection-overlay">
+                <span>01 / COLLECTION</span>
+                <h3>ANIME</h3>
+                <small>Explorar colección →</small>
+            </div>
+        </a>
+
+        <a href="#catalogo" class="collection-card">
+            <img src="https://placehold.co/700x850/242126/ffffff?text=GAMING"
+                 alt="Figuras de videojuegos">
+            <div class="collection-overlay">
+                <span>02 / COLLECTION</span>
+                <h3>VIDEOJUEGOS</h3>
+                <small>Explorar colección →</small>
+            </div>
+        </a>
+
+        <a href="#catalogo" class="collection-card">
+            <img src="https://placehold.co/700x850/242126/ffffff?text=COLLECTIBLES"
+                 alt="Figuras coleccionables">
+            <div class="collection-overlay">
+                <span>03 / COLLECTION</span>
+                <h3>COLECCIONABLES</h3>
+                <small>Explorar colección →</small>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- PRODUCTOS DESTACADOS -->
+<section class="section featured" id="destacados">
+
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">SELECCIÓN NEKORA</span>
+            <h2>Figuras destacadas</h2>
+        </div>
+        <a href="#catalogo" class="text-link">Ver catálogo completo →</a>
+    </div>
+
+    <div class="product-grid">
+
+        <!-- PRODUCTO DE EJEMPLO: REEMPLAZAR CON PRODUCTO REAL -->
+        <article class="product-card">
+            <div class="product-image">
+                <span class="product-tag">DESTACADO</span>
+                <img src="https://placehold.co/600x650/eeeeee/222222?text=Figura+01"
+                     alt="Figura coleccionable 1">
+            </div>
+            <div class="product-info">
+                <span class="product-category">ANIME</span>
+                <h3>Nombre de la figura</h3>
+                <p>Consulta precio y disponibilidad.</p>
+                <a href="https://wa.me/51999999999?text=Hola%20NEKORA%2C%20quiero%20consultar%20por%20esta%20figura."
+                   class="product-button" target="_blank" rel="noopener">
+                    CONSULTAR POR WHATSAPP
+                </a>
+            </div>
+        </article>
+
+        <article class="product-card">
+            <div class="product-image">
+                <span class="product-tag">COLECCIÓN</span>
+                <img src="https://placehold.co/600x650/eeeeee/222222?text=Figura+02"
+                     alt="Figura coleccionable 2">
+            </div>
+            <div class="product-info">
+                <span class="product-category">VIDEOJUEGOS</span>
+                <h3>Nombre de la figura</h3>
+                <p>Consulta precio y disponibilidad.</p>
+                <a href="https://wa.me/51999999999?text=Hola%20NEKORA%2C%20quiero%20consultar%20por%20esta%20figura."
+                   class="product-button" target="_blank" rel="noopener">
+                    CONSULTAR POR WHATSAPP
+                </a>
+            </div>
+        </article>
+
+        <article class="product-card">
+            <div class="product-image">
+                <span class="product-tag">NOVEDAD</span>
+                <img src="https://placehold.co/600x650/eeeeee/222222?text=Figura+03"
+                     alt="Figura coleccionable 3">
+            </div>
+            <div class="product-info">
+                <span class="product-category">ANIME</span>
+                <h3>Nombre de la figura</h3>
+                <p>Consulta precio y disponibilidad.</p>
+                <a href="https://wa.me/51999999999?text=Hola%20NEKORA%2C%20quiero%20consultar%20por%20esta%20figura."
+                   class="product-button" target="_blank" rel="noopener">
+                    CONSULTAR POR WHATSAPP
+                </a>
+            </div>
+        </article>
+
+    </div>
+
+    <p class="demo-notice">
+        Los productos e imágenes de esta sección son demostrativos.
+        Reemplázalos por tus productos reales antes de publicar.
+    </p>
+
+</section>
+
+<!-- CATÁLOGO CANVA -->
+<section class="section catalog-section" id="catalogo">
+
+    <div class="catalog-content">
+        <span class="eyebrow">NEKORA / DIGITAL CATALOG</span>
+        <h2>Encuentra tu próxima figura favorita.</h2>
+        <p>
+            Explora nuestro catálogo y descubre los modelos disponibles.
+            Escríbenos para confirmar stock, precio y detalles de entrega.
+        </p>
+    </div>
+
+    <div class="catalog-viewer">
+        <iframe
+            src="https://www.canva.com/design/DAHEKmhzAV4/xYz1EtpOw6IgCy9CLBigsQ/view?embed"
+            loading="lazy"
+            title="Catálogo de NEKORA Figuras"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <p class="catalog-note">
+        <i class="fa-solid fa-circle-info"></i>
+        La disponibilidad y los precios se confirman directamente por WhatsApp.
+    </p>
+
+</section>
+
+<!-- NOSOTROS -->
+<section class="about-section" id="nosotros">
+
+    <div class="about-image">
+        <img src="https://placehold.co/800x850/202126/ffffff?text=NEKORA+COLLECTOR+CULTURE"
+             alt="Universo NEKORA">
+    </div>
+
+    <div class="about-content">
+        <span class="eyebrow">SOBRE NOSOTROS</span>
+        <h2>Más que figuras.<br><span>Historias que coleccionar.</span></h2>
+
+        <p>
+            En NEKORA Figuras compartimos la pasión por el anime,
+            los videojuegos y la cultura geek.
+        </p>
+
+        <p>
+            Queremos acercarte a esas piezas que representan tus
+            personajes e historias favoritas, brindándote atención
+            personalizada y una experiencia de compra clara y cercana.
+        </p>
+
+        <div class="about-signature">
+            NEKORA FIGURAS
+            <small>AYACUCHO · PERÚ</small>
+        </div>
+    </div>
+
+</section>
+
+<!-- COMPRA Y ENVÍOS -->
+<section class="section shipping-section">
+
+    <div class="section-heading centered">
+        <div>
+            <span class="eyebrow">COMPRA CON TRANQUILIDAD</span>
+            <h2>¿Cómo comprar en NEKORA?</h2>
+            <p>Un proceso sencillo, transparente y acompañado.</p>
+        </div>
+    </div>
+
+    <div class="steps-grid">
+
+        <div class="step-card">
+            <span>01</span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h3>Elige tu figura</h3>
+            <p>Explora el catálogo y encuentra el modelo que buscas.</p>
+        </div>
+
+        <div class="step-card">
+            <span>02</span>
+            <i class="fa-brands fa-whatsapp"></i>
+            <h3>Contáctanos</h3>
+            <p>Consulta disponibilidad, precio y detalles del producto.</p>
+        </div>
+
+        <div class="step-card">
+            <span>03</span>
+            <i class="fa-solid fa-credit-card"></i>
+            <h3>Confirma tu compra</h3>
+            <p>Te informaremos los medios de pago y las condiciones antes de confirmar.</p>
+        </div>
+
+        <div class="step-card">
+            <span>04</span>
+            <i class="fa-solid fa-truck-fast"></i>
+            <h3>Recibe tu pedido</h3>
+            <p>Coordinamos el despacho por Shalom y te compartimos el seguimiento disponible.</p>
+        </div>
+
+    </div>
+
+    <div class="shipping-banner">
+        <i class="fa-solid fa-box-open"></i>
+        <div>
+            <h3>¡Llegamos a todo el Perú!</h3>
+            <p>Realizamos envíos a nivel nacional mediante Shalom, previa coordinación.</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- PREGUNTAS FRECUENTES -->
+<section class="section faq-section">
+
+    <div class="section-heading centered">
+        <div>
+            <span class="eyebrow">INFORMACIÓN PARA COMPRADORES</span>
+            <h2>Preguntas frecuentes</h2>
+        </div>
+    </div>
+
+    <div class="faq-list">
+
+        <details>
+            <summary>¿Realizan envíos a otras ciudades?</summary>
+            <p>Sí. Realizamos envíos a todo el Perú mediante Shalom. Consulta la cobertura, costo y plazo estimado para tu destino.</p>
+        </details>
+
+        <details>
+            <summary>¿Cómo puedo saber si una figura está disponible?</summary>
+            <p>Escríbenos por WhatsApp indicando el nombre o modelo de la figura. Te confirmaremos su disponibilidad.</p>
+        </details>
+
+        <details>
+            <summary>¿Cómo puedo realizar un pedido?</summary>
+            <p>Selecciona tu figura, contáctanos y te brindaremos información sobre el precio, pago y entrega antes de confirmar la compra.</p>
+        </details>
+
+        <details>
+            <summary>¿Dónde se encuentra NEKORA?</summary>
+            <p>Somos de Ayacucho, Perú. Puedes coordinar con nosotros la entrega local y consultar las opciones disponibles.</p>
+        </details>
+
+        <details>
+            <summary>¿Cómo puedo consultar el estado de mi pedido?</summary>
+            <p>Contáctanos por WhatsApp. Te ayudaremos con la información de despacho y seguimiento de tu pedido.</p>
+        </details>
+
+    </div>
+
+</section>
+
+<!-- CONTACTO FINAL -->
+<section class="contact-section" id="contacto">
+
+    <span class="eyebrow">TU PRÓXIMA FIGURA TE ESPERA</span>
+
+    <h2>¿Listo para ampliar tu colección?</h2>
+
+    <p>
+        Escríbenos y te ayudaremos a encontrar esa figura
+        que estás buscando.
+    </p>
+
+    <a href="https://wa.me/51999999999?text=Hola%20NEKORA%20Figuras%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20productos."
+       class="btn-primary" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i>
+        HABLAR POR WHATSAPP
+    </a>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+            <a href="#" class="logo footer-logo">
+                <span>NEKORA</span>
+                <small>FIGURAS / COLLECTOR CULTURE</small>
+            </a>
+
+            <p>
+                Anime, videojuegos y cultura geek.
+                Un universo para verdaderos coleccionistas.
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h4>EXPLORA</h4>
+            <a href="#inicio">Inicio</a>
+            <a href="#colecciones">Colecciones</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#nosotros">Nosotros</a>
+        </div>
+
+        <div class="footer-column">
+            <h4>INFORMACIÓN</h4>
+            <a href="#contacto">Contacto</a>
+            <a href="#catalogo">Disponibilidad</a>
+            <a href="#faq">Preguntas frecuentes</a>
+        </div>
+
+        <div class="footer-column">
+            <h4>SÍGUENOS</h4>
+            <!-- REEMPLAZAR CON TUS REDES REALES -->
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 NEKORA FIGURAS. Todos los derechos reservados.</p>
+        <span>AYACUCHO · PERÚ</span>
+    </div>
+
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/51999999999?text=Hola%20NEKORA%20Figuras"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener"
+   aria-label="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuButton.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        menuButton.setAttribute('aria-expanded', isOpen);
+        menuButton.innerHTML = isOpen
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuButton.setAttribute('aria-expanded', 'false');
+            menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        });
+    });
+</script>
 
 </body>
 </html>
