@@ -973,3 +973,227 @@ button {
         padding: 22px 18px;
     }
 }
+
+
+
+/* =========================================================
+   NEKORA OKSELL — estilos exclusivos de anime_oksell.html
+   Añadir al FINAL de style.css. No reemplazar estilos previos.
+   ========================================================= */
+
+.oksell-body {
+  background: #f4f2ee;
+  color: #151619;
+  font-family: var(--font, 'Montserrat', sans-serif);
+}
+.oksell-body a { text-decoration: none; }
+.oksell-topline {
+  padding: 9px 16px;
+  background: var(--red, #D92332);
+  color: #fff;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.oksell-topline span { padding: 0 7px; opacity: .7; }
+.oksell-header {
+  min-height: 76px;
+  padding: 13px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: var(--black, #151619);
+  color: #fff;
+}
+.oksell-brand { display: inline-flex; flex-direction: column; line-height: 1; color: #fff; }
+.oksell-brand strong {
+  font-family: var(--display, 'Rajdhani', sans-serif);
+  font-size: 32px;
+  letter-spacing: 3px;
+}
+.oksell-brand small { margin-top: 5px; color: #aaa; font-size: 8px; letter-spacing: 2px; }
+.oksell-header-cta {
+  padding: 11px 16px;
+  border: 1px solid var(--red, #D92332);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.oksell-header-cta:hover { background: var(--red, #D92332); }
+.oksell-hero {
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+  align-items: center;
+  gap: 5%;
+  min-height: 570px;
+  padding: 65px 8%;
+  overflow: hidden;
+  background: var(--black, #151619);
+  color: #fff;
+}
+.oksell-hero-copy { max-width: 590px; }
+.oksell-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--red, #D92332);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.oksell-kicker i { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.oksell-hero h1, .oksell-bottom-cta h2 {
+  margin: 22px 0;
+  font-family: var(--display, 'Rajdhani', sans-serif);
+  font-size: clamp(52px, 7vw, 88px);
+  line-height: .91;
+  letter-spacing: -1px;
+}
+.oksell-hero h1 em, .oksell-bottom-cta h2 em { color: var(--red, #D92332); font-style: normal; }
+.oksell-hero-copy > p { max-width: 440px; color: #bcbcbc; font-size: 13px; line-height: 1.9; }
+.oksell-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 27px;
+  padding: 16px 22px;
+  background: var(--red, #D92332);
+  color: #fff !important;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: .2s ease;
+}
+.oksell-primary:hover { background: var(--red-dark, #B91E2B); transform: translateY(-2px); }
+.oksell-origin { margin-top: 32px; color: #aaa; font-size: 10px; letter-spacing: 2px; }
+.oksell-origin i { margin-right: 8px; color: var(--red, #D92332); }
+.oksell-hero-art { position: relative; min-height: 390px; background: #24252a; }
+.oksell-hero-art > img { width: 100%; height: 430px; object-fit: cover; }
+.oksell-image-fallback {
+  display: none;
+  min-height: 430px;
+  place-content: center;
+  text-align: center;
+  background: radial-gradient(circle at 50% 40%, #383941, #202126 65%);
+  color: #fff;
+  font-family: var(--display, 'Rajdhani', sans-serif);
+  font-size: 58px;
+  font-weight: 700;
+  letter-spacing: 8px;
+}
+.oksell-image-fallback small { display: block; color: #aaa; font: 9px var(--font, sans-serif); letter-spacing: 2px; }
+.oksell-stamp {
+  position: absolute;
+  right: -15px;
+  bottom: 22px;
+  padding: 15px 20px;
+  background: var(--red, #D92332);
+  color: #fff;
+  font: 700 17px/1.1 var(--display, sans-serif);
+  letter-spacing: 1px;
+}
+.oksell-stamp b { font-size: 10px; }
+.oksell-proof {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  padding: 26px 8%;
+  background: #fff;
+  border-bottom: 1px solid #e7e5e1;
+}
+.oksell-proof > div { display: flex; align-items: center; gap: 14px; }
+.oksell-proof > div > i { color: var(--red, #D92332); font-size: 22px; }
+.oksell-proof span { display: flex; flex-direction: column; }
+.oksell-proof b { font-size: 11px; }
+.oksell-proof small { color: #777; font-size: 10px; }
+.oksell-products { padding: 82px 8%; background: #f4f2ee; }
+.oksell-section-head { display: flex; justify-content: space-between; align-items: end; gap: 25px; margin-bottom: 30px; }
+.oksell-section-head h2, .oksell-how h2 {
+  margin-top: 8px;
+  font: 700 clamp(34px, 4vw, 48px)/1.05 var(--display, sans-serif);
+}
+.oksell-section-head > p { max-width: 320px; color: #777; font-size: 12px; }
+.oksell-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.oksell-card { min-width: 0; background: #fff; border: 1px solid #e8e6e2; transition: .2s ease; }
+.oksell-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px #15161912; }
+.oksell-card-image { position: relative; height: 290px; overflow: hidden; background: #e8e7e4; }
+.oksell-card-image img { width: 100%; height: 100%; object-fit: cover; }
+.oksell-tag { position: absolute; z-index: 2; top: 13px; left: 13px; padding: 7px 10px; background: var(--red, #D92332); color: #fff; font-size: 8px; font-weight: 800; letter-spacing: 1px; }
+.oksell-product-fallback { display: grid; place-items: center; width: 100%; height: 100%; color: #777; font: 700 15px var(--display, sans-serif); letter-spacing: 2px; }
+.oksell-card-info { padding: 18px; }
+.oksell-category { color: var(--red, #D92332); font-size: 9px; font-weight: 800; letter-spacing: 1px; }
+.oksell-card-info h3 { min-height: 42px; margin: 7px 0; font-size: 15px; line-height: 1.4; }
+.oksell-price { margin-bottom: 16px; color: #777; font-size: 11px; }
+.oksell-buy { display: flex; align-items: center; justify-content: center; gap: 9px; padding: 13px 9px; background: var(--black, #151619); color: #fff !important; text-align: center; font-size: 9px; font-weight: 800; letter-spacing: .6px; }
+.oksell-buy:hover { background: #168b51; }
+.oksell-edit-note { margin-top: 18px; color: #777; font-size: 10px; }
+.oksell-edit-note i { margin-right: 5px; color: var(--red, #D92332); }
+.oksell-how { padding: 75px 8%; background: #fff; text-align: center; }
+.oksell-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 35px; text-align: left; }
+.oksell-steps article { padding: 23px; border: 1px solid #e8e6e2; }
+.oksell-steps article > b { color: var(--red, #D92332); font: 700 28px var(--display, sans-serif); }
+.oksell-steps h3 { margin: 8px 0 4px; font-size: 15px; }
+.oksell-steps p { color: #777; font-size: 11px; line-height: 1.8; }
+.oksell-bottom-cta { padding: 78px 20px; background: var(--black, #151619); color: #fff; text-align: center; }
+.oksell-bottom-cta h2 { font-size: clamp(42px, 6vw, 68px); }
+.oksell-bottom-cta > p { color: #bbb; font-size: 12px; }
+.oksell-bottom-cta .oksell-primary { margin-top: 22px; }
+.oksell-footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 25px 7%; background: #101114; color: #aaa; }
+.oksell-footer .oksell-brand strong { font-size: 25px; }
+.oksell-footer p, .oksell-footer > a:last-child { font-size: 9px; }
+.oksell-footer > a:last-child { color: #fff; font-weight: 700; letter-spacing: 1px; }
+.oksell-floating-wa {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 17px;
+  border-radius: 50px;
+  background: #168b51;
+  color: #fff !important;
+  box-shadow: 0 6px 22px #0003;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+.oksell-floating-wa i { font-size: 19px; }
+
+@media (max-width: 800px) {
+  .oksell-hero { grid-template-columns: 1fr  .85fr; gap: 25px; padding: 55px 6%; }
+  .oksell-hero-art, .oksell-hero-art > img, .oksell-image-fallback { min-height: 340px; height: 340px; }
+  .oksell-hero h1 { font-size: clamp(48px, 8vw, 68px); }
+  .oksell-products, .oksell-how { padding-left: 6%; padding-right: 6%; }
+  .oksell-card-image { height: 230px; }
+}
+@media (max-width: 620px) {
+  .oksell-header { min-height: 68px; padding: 12px 5%; }
+  .oksell-brand strong { font-size: 28px; }
+  .oksell-header-cta { padding: 10px 11px; font-size: 9px; }
+  .oksell-hero { grid-template-columns: 1fr; padding: 48px 7% 55px; }
+  .oksell-hero h1 { font-size: clamp(54px, 15vw, 76px); }
+  .oksell-hero-art { min-height: 290px; }
+  .oksell-hero-art > img, .oksell-image-fallback { height: 290px; min-height: 290px; }
+  .oksell-stamp { right: -8px; bottom: 14px; }
+  .oksell-proof { grid-template-columns: 1fr; gap: 16px; padding: 22px 8%; }
+  .oksell-section-head { display: block; }
+  .oksell-section-head > p { margin-top: 12px; }
+  .oksell-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .oksell-card-image { height: 190px; }
+  .oksell-card-info { padding: 13px; }
+  .oksell-card-info h3 { font-size: 13px; }
+  .oksell-buy { min-height: 42px; font-size: 8px; }
+  .oksell-steps { grid-template-columns: 1fr; gap: 12px; }
+  .oksell-footer { flex-direction: column; text-align: center; }
+  .oksell-floating-wa { right: 12px; bottom: 12px; padding: 12px 15px; }
+}
+@media (max-width: 360px) {
+  .oksell-grid { grid-template-columns: 1fr; }
+  .oksell-card-image { height: 260px; }
+}
