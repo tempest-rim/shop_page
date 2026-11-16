@@ -51,11 +51,18 @@
 
     <section class="oksell-products" id="productos">
       <div class="oksell-section-head">
-        <div><span class="oksell-kicker">SELECCIÓN NEKORA</span><h2>Encuentra tu figura</h2></div>
-        <p>¿Viste algo que te gusta? Toca consultar y conversemos por WhatsApp.</p>
+        <div><span class="oksell-kicker">NEKORA / DIGITAL CATALOG</span><h2>Explora nuestro catálogo</h2></div>
+        <p>Descubre las figuras en nuestro catálogo de Canva. Escríbenos para confirmar precio y disponibilidad.</p>
       </div>
-      <div class="oksell-grid" id="oksell-product-grid" aria-live="polite"></div>
-      <p class="oksell-edit-note"><i class="fa-solid fa-circle-info"></i> Catálogo demostrativo: reemplaza nombres, imágenes y precios por los datos reales antes de publicar.</p>
+      <div class="oksell-canva-frame">
+        <iframe
+          src="https://www.canva.com/design/DAHEKmhzAV4/xYz1EtpOw6IgCy9CLBigsQ/view?embed"
+          loading="lazy"
+          title="Catálogo de NEKORA Figuras"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="oksell-edit-note"><i class="fa-solid fa-circle-info"></i> Los precios y la disponibilidad se confirman directamente por WhatsApp.</p>
     </section>
 
     <section class="oksell-how">
@@ -91,93 +98,9 @@
       CONFIGURACIÓN RÁPIDA
       1. Reemplaza el número por tu WhatsApp con código de país, solo números.
          Perú: 51 + número. Ejemplo de formato: 51987654321
-      2. Edita los productos en el arreglo PRODUCTS.
-      3. Guarda las fotos dentro de la carpeta assets/.
+      2. El catálogo se carga desde el diseño Canva ya utilizado en anime.html.
     */
     const WHATSAPP_NUMBER = "519XXXXXXXX";
-
-    const PRODUCTS = [
-      {
-        name: "Nombre de la figura 1",
-        category: "ANIME",
-        price: "Consultar precio",
-        image: "assets/producto-01.jpg",
-        tag: "DESTACADO"
-      },
-      {
-        name: "Nombre de la figura 2",
-        category: "VIDEOJUEGOS",
-        price: "Consultar precio",
-        image: "assets/producto-02.jpg",
-        tag: "COLECCIÓN"
-      },
-      {
-        name: "Nombre de la figura 3",
-        category: "COLECCIONABLES",
-        price: "Consultar precio",
-        image: "assets/producto-03.jpg",
-        tag: "NOVEDAD"
-      }
-    ];
-
-    const productGrid = document.getElementById("oksell-product-grid");
-
-    function whatsappUrl(message) {
-      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-    }
-
-    function productCard(product, index) {
-      const article = document.createElement("article");
-      article.className = "oksell-card";
-
-      const imageWrap = document.createElement("div");
-      imageWrap.className = "oksell-card-image";
-
-      const tag = document.createElement("span");
-      tag.className = "oksell-tag";
-      tag.textContent = product.tag || "FIGURA";
-
-      const image = document.createElement("img");
-      image.src = product.image;
-      image.alt = product.name;
-      image.loading = "lazy";
-      image.onerror = () => {
-        image.remove();
-        const fallback = document.createElement("div");
-        fallback.className = "oksell-product-fallback";
-        fallback.textContent = "AÑADE TU FOTO";
-        imageWrap.appendChild(fallback);
-      };
-
-      imageWrap.append(tag, image);
-
-      const info = document.createElement("div");
-      info.className = "oksell-card-info";
-
-      const category = document.createElement("span");
-      category.className = "oksell-category";
-      category.textContent = product.category;
-
-      const name = document.createElement("h3");
-      name.textContent = product.name;
-
-      const price = document.createElement("p");
-      price.className = "oksell-price";
-      price.textContent = product.price;
-
-      const link = document.createElement("a");
-      link.className = "oksell-buy";
-      link.href = whatsappUrl(`Hola NEKORA, quisiera consultar por: ${product.name}. ¿Me brindan información sobre precio y disponibilidad?`);
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.innerHTML = 'CONSULTAR POR WHATSAPP <i class="fa-brands fa-whatsapp"></i>';
-
-      info.append(category, name, price, link);
-      article.append(imageWrap, info);
-      return article;
-    }
-
-    PRODUCTS.forEach((product, index) => productGrid.appendChild(productCard(product, index)));
 
     document.querySelectorAll('[data-whatsapp="general"]').forEach(link => {
       link.href = whatsappUrl("Hola NEKORA, quisiera información sobre sus figuras y productos disponibles.");
