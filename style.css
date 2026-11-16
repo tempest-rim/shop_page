@@ -1197,3 +1197,23 @@ button {
   .oksell-grid { grid-template-columns: 1fr; }
   .oksell-card-image { height: 260px; }
 }
+
+
+/* Catálogo Canva incrustado */
+.oksell-canva-frame {
+  width: 100%;
+  min-height: 720px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5e3df;
+}
+.oksell-canva-frame iframe {
+  display: block;
+  width: 100%;
+  height: 720px;
+  border: 0;
+}
+@media (max-width: 620px) {
+  .oksell-canva-frame { min-height: 620px; }
+  .oksell-canva-frame iframe { height: 620px; }
+}
